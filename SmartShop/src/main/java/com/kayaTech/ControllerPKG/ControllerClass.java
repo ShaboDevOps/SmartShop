@@ -1,0 +1,14 @@
+package com.kayaTech.ControllerPKG;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class ControllerClass {
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+
+}

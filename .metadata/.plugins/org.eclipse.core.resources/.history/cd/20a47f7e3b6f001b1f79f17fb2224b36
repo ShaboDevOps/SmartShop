@@ -1,0 +1,23 @@
+package com.kayaTech.Services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.kayaTech.PurchaseINF;
+import com.kayaTech.Model.PurchasedProduct;
+
+@Component
+public class ServicesClass {
+	
+	@Autowired
+	private PurchaseINF purchaseRepo;
+	
+	public List <PurchasedProduct> saveInvoice(List<PurchasedProduct> product) {
+		return purchaseRepo.saveAll(product);
+	}
+	
+
+}

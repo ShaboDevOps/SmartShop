@@ -1,0 +1,31 @@
+package com.kayaTech.Services;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.kayaTech.PurchaseINF;
+import com.kayaTech.Model.PurchasedProduct;
+
+@Component
+public class ServicesClass {
+	
+	@Autowired
+	private PurchaseINF purchaseRepo;
+	
+	public List <PurchasedProduct> saveInvoice(List<PurchasedProduct> listProduct) {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+	    Date date = new Date();  
+	   
+		for(PurchasedProduct product : listProduct) {
+			product.setExpectedProductProfit(product.getSalePrice() - product.getPurchasePrice());
+			product.setPurchaseDate( formatter.format(date));
+		}
+		return purchaseRepo.saveAll(listProduct);
+	}
+	
+
+}

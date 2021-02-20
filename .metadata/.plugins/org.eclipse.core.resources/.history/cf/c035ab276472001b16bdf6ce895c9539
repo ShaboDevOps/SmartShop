@@ -1,0 +1,34 @@
+package com.kayaTech.Model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Product {
+	
+	@Id
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( unique = true, nullable = false, insertable = false, updatable = false)
+	private Long rolNo;	
+	private String name;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Long getRolNo() {
+		return rolNo;
+	}
+	public void setRolNo(Long rolNo) {
+		this.rolNo = rolNo;
+	}
+	
+	
+	
+
+}

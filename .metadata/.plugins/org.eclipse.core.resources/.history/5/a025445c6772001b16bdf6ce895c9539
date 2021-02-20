@@ -1,0 +1,58 @@
+package com.kayaTech.Model;
+
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "SALES")
+public class Sales {
+	
+	@Id
+	private Double totalAmount;
+	private Date date;
+	private Date day;
+	private Double profit;
+	private Double dept;
+	private Double reservedAmount;
+	
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public Date getDay() {
+		return day;
+	}
+	public void setDay(Date day) {
+		this.day = day;
+	}
+	public Double getTotalAmount() {
+		return totalAmount;
+	}
+	public void setTotalAmount(Double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+	public Double getProfit() {
+		return profit;
+	}
+	public void setProfit(Double profit) {
+		this.profit = profit;
+	}
+	public Double getDept() {
+		return dept;
+	}
+	public void setDept(Double dept) {
+		this.dept = dept;
+	}
+	public Double getReservedAmount() {
+		return reservedAmount;
+	}
+	public void setReservedAmount(Double reservedAmount) {
+		this.reservedAmount = reservedAmount;
+	}
+	
+
+}

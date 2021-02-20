@@ -1,0 +1,14 @@
+package com.kayaTech.Services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.kayaTech.PurchaseINF;
+
+@Component
+public class ServicesClass {
+	
+	@Autowired
+	private PurchaseINF purchaseRepo;
+
+}
